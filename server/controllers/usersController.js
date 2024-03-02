@@ -41,19 +41,19 @@ module.exports.login = async (req, res, next) => {
 module.exports.setAvatar = async (req, res, next) => {
   try {
     console.log("pahunchgae");
-    const userId = req.query
-    console.log(userId)
+    const userId = req.query;
+    console.log(userId);
     const avatarImage = req.body.image;
-    const find = await User.find();
-    // const userData = await User.findByIdAndUpdate(
-    //   userId,
-    //   {
-    //     isAvatarImageSet: true,
-    //     avatarImage,
-    //   },
-    //   { new: true }
-    // );
-    console.log(find, "insetAvatar");
+    // const find = await User.find();
+    const userData = await User.findByIdAndUpdate(
+      userId,
+      {
+        isAvatarImageSet: true,
+        avatarImage,
+      },
+      { new: true }
+    );
+    console.log("insetAvatar", userData);
     return res.json({
       isSet: userData.isAvatarImageSet,
       image: userData.avatarImage,

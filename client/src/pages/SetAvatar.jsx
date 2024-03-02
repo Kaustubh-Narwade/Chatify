@@ -42,6 +42,9 @@ export default function SetAvatar() {
       console.log(user, "00000");
       // console.log(selectedAvatar);
       // console.log(avatars)
+
+      console.log(`${setAvatarRoute}/${user._id}`);
+
       const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
         image: avatars[selectedAvatar],
       });
