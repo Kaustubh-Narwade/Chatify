@@ -16,6 +16,10 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
+
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messagesRoute);
 
@@ -25,7 +29,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("DB Connection Successful");
+    console.log("DB Connection very Successful");
   })
   .catch((err) => {
     console.log(err.message);
