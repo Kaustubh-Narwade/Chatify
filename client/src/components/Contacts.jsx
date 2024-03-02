@@ -89,6 +89,7 @@ const Container = styled.div`
     }
   }
   .contacts {
+    padding-top:0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,6 +108,10 @@ const Container = styled.div`
       align-items: center;
       &:hover {
         background-color: #322e48;
+        scale: 1.07;
+      }
+      &:active{
+        scale: 1;
       }
       transition: 0.3s ease-in-out;
       .avatar {

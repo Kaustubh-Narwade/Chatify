@@ -76,9 +76,12 @@ const Container = styled.div`
         font-size: 1.7rem;
         color: #635f7a;
         cursor: pointer;
+        margin-bottom: 5px;
+        transition: 0.3s;
         &:hover {
           transition: 0.2s;
           color: #9a86f3;
+          scale: 1.2;
         }
       }
       .Picker {
@@ -115,6 +118,7 @@ const Container = styled.div`
     align-items: center;
     gap: 3rem;
     background-color: #2a2a33;
+    margin-bottom: 5px;
     input {
       width: 90%;
       height: 60%;
@@ -151,6 +155,14 @@ const Container = styled.div`
         svg {
           transition: 0.3s;
           color: #fff;
+          scale: 1.2;
+        }
+        scale: 1.2;
+      }
+      &:active {
+        scale: 1;
+        svg {
+          scale: 1;
         }
       }
       @media screen and (min-width: 720px) and (max-width: 1080px) {
