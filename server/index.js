@@ -6,12 +6,12 @@ const messagesRoute = require("./routes/messagesRoute");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
-// origin: ["https://chatify0.vercel.app"],
-//     methods: ["POST", "GET"],
-//     credentials: true,
-app.use(
-  cors('*')
-);
+const corsoption = {
+  origin: ["https://chatify0.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true,
+};
+app.use(cors(corsoption));
 app.use(express.json());
 
 app.get("/", (req, res) => {
