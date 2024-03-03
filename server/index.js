@@ -6,19 +6,12 @@ const messagesRoute = require("./routes/messagesRoute");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
-// const corsoption = {
-//   origin: ["https://chatify0.vercel.app"],
-//   methods: ["POST", "GET"],
-//   credentials: true,
-// };
-// app.use(cors(corsoption));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://chatify0.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
+const corsoption = {
+  origin: ["https://chatify0.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true,
+};
+app.use(cors(corsoption));
 app.use(express.json());
 
 app.get("/", (req, res) => {
