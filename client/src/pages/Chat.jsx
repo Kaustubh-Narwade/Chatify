@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { allUsersRoute, host } from "../utils/APIRoutes";
+import { allUsersRoute, vhost } from "../utils/APIRoutes";
 import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
@@ -38,7 +38,7 @@ function Chat() {
 
   useEffect(() => {
     if (currentUser) {
-      socket.current = io(host);
+      socket.current = io(vhost);
       socket.current.emit("add-user", currentUser._id);
     }
   }, [currentUser]);
