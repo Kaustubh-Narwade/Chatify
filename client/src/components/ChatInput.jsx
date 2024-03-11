@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Picker from "emoji-picker-react";
-import { IoMdSend } from "react-icons/io";
+import { IoSend } from "react-icons/io5";
 import { BsEmojiSmile } from "react-icons/bs";
 
 export default function ChatInput({ handleSendMsg }) {
@@ -47,7 +47,7 @@ export default function ChatInput({ handleSendMsg }) {
           onChange={(e) => setMsg(e.target.value)}
         />
         <button className="submit">
-          <IoMdSend />
+          <IoSend />
         </button>
       </form>
     </Container>
@@ -139,7 +139,7 @@ const Container = styled.div`
       }
     }
     button {
-      padding: px;
+      padding: 2px;
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -149,18 +149,17 @@ const Container = styled.div`
       background-color: #3a374d;
       border: 2px solid #9a86f3;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.2s;
       &:hover {
         background-color: #9a86f3;
         svg {
-          transition: 0.3s;
+          transition: 0.2s;
           color: #fff;
-          scale: 1.2;
         }
-        scale: 1.2;
+        
       }
       &:active {
-        scale: 1;
+        scale: 0.9;
         svg {
           scale: 1;
         }
